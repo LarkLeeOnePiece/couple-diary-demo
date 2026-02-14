@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Couple Notes Demo</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header class="header">
+      <h1>💌 Couple Notes</h1>
+      <p class="sub">最简单玩具版：留言 / 手账（localStorage）</p>
+    </header>
+
+    <section class="card">
+      <h2>进入/创建你们的空间</h2>
+      <div class="row">
+        <input id="roomInput" placeholder="输入空间码（比如: ourlove2026）" />
+        <button id="enterBtn">进入</button>
+      </div>
+      <p class="hint">提示：空间码只是本地存储 key，不是隐私保护。</p>
+    </section>
+
+    <section id="main" class="card hidden">
+      <div class="topbar">
+        <div>
+          <h2 id="roomTitle">空间：</h2>
+          <p class="hint" id="roomMeta"></p>
+        </div>
+        <button id="exportBtn" class="ghost">导出 JSON</button>
+      </div>
+
+      <div class="composer">
+        <input id="authorInput" placeholder="署名（比如：A / B）" />
+        <textarea id="contentInput" rows="4" placeholder="写点什么吧…"></textarea>
+
+        <div class="row">
+          <input id="tagInput" placeholder="标签（可选：想你/开心/纪念日…）" />
+          <button id="postBtn">发布</button>
+        </div>
+
+        <div class="row">
+          <input id="imgUrlInput" placeholder="图片 URL（可选，粘贴图片链接）" />
+        </div>
+
+        <div class="row">
+          <input id="searchInput" placeholder="搜索（按关键字/标签/署名）" />
+          <select id="sortSelect">
+            <option value="new">最新在前</option>
+            <option value="old">最旧在前</option>
+          </select>
+        </div>
+      </div>
+
+      <ul id="list" class="list"></ul>
+      <p id="empty" class="hint hidden">还没有记录，发第一条吧～</p>
+    </section>
+
+    <footer class="footer">
+      <p>Made for demo. Data stored in your browser only.</p>
+    </footer>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>
